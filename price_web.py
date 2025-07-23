@@ -135,6 +135,9 @@ def index():
 """, results=results, keyword=keyword)
 
 # 執行網站
+import os
+
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))  # 預設使用 Render 提供的 PORT
-    app.run(host='0.0.0.0', port=port, debug=True)
+    port = int(os.environ.get('PORT', 5000))   # 使用 Render 指定的 PORT
+    app.run(host='0.0.0.0', port=port, debug=True)  # 綁定 0.0.0.0 才能讓外部連進來
+
